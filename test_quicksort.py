@@ -24,9 +24,10 @@ def sort(input_list):
 def test_qs():
     unsorted = npr.randint(0, 100000, 100)
     sorted = sort(unsorted)
+    assert len(sorted) == len(unsorted)
     count = 0
     for i in sorted:
-        print(count)
+        assert i in unsorted
         if count >= 1:
             assert sorted[count] >= sorted[count-1]
         count += 1
