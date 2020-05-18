@@ -1,9 +1,9 @@
 import numpy.random as npr
 
 
-def quicksort(input_list):
+def sort(input_list):
     if len(input_list) <= 1:
-        print("Rekursionsende")
+        # print("Rekursionsende")
         return input_list
     else:
         # get random pivot element
@@ -18,10 +18,21 @@ def quicksort(input_list):
             elif i > pivot:
                 higher.append(i)
         # print(lower, "//", higher)
-        return quicksort(lower) + [pivot] + quicksort(higher)
+        return sort(lower) + [pivot] + sort(higher)
+
+
+def test_qs():
+    unsorted = npr.randint(0, 100000, 100)
+    sorted = sort(unsorted)
+    count = 0
+    for i in sorted:
+        print(count)
+        if count >= 1:
+            assert sorted[count] >= sorted[count-1]
+        count += 1
 
 
 if __name__ == '__main__':
     unsorted = npr.randint(0, 100000, 100)
     # print(unsorted)
-    print(quicksort(unsorted))
+    print(sort(unsorted))
