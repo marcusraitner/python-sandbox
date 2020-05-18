@@ -16,7 +16,7 @@ def quicksort(input_list):
                 lower.append(i)
             elif i > pivot:
                 higher.append(i)
-        # print(lower, "//", higher)
+        # print(lower, "//", higher) new
         return quicksort(lower) + [pivot] + quicksort(higher)
 
 
