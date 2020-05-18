@@ -16,11 +16,11 @@ def quicksort(input_list):
                 lower.append(i)
             elif i > pivot:
                 higher.append(i)
-        # print(lower, "//", higher) new
+        # print(lower, "//", higher)
         return quicksort(lower) + [pivot] + quicksort(higher)
 
 
 if __name__ == '__main__':
     unsorted = npr.randint(0, 100000, 100)
-    print(unsorted)
+    # print(unsorted)
     print(quicksort(unsorted))
