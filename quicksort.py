@@ -3,6 +3,7 @@ import numpy.random as npr
 
 def quicksort(input_list):
     if len(input_list) <= 1:
+        print("Rekursionsende")
         return input_list
     else:
         # get random pivot element
